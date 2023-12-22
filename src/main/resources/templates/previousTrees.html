@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Previous Trees</title>
+</head>
+<body>
+<h1>Previous Trees</h1>
+<div th:each="tree : ${trees}">
+    <pre id="treeStructure"></pre>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        let treeStructure = [[${tree.treeStructure}]];
+        document.getElementById('treeStructure').textContent = JSON.stringify(JSON.parse(treeStructure), null, 2);
+        /*]]>*/
+    </script>
+</div>
+</body>
+</html>
